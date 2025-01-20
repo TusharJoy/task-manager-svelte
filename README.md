@@ -1,13 +1,13 @@
-# Svelte App
+# TaskMaster
 
-A modern web application built with [Svelte](https://svelte.dev).
+A modern task management application built with Svelte and TailwindCSS.
 
 ## 🚀 Quick Start
 
 ```bash
 # Clone the repository
-git clone [your-repo-url]
-cd [your-project-name]
+git clone git@github.com:TusharJoy/task-manager-svelte.git
+cd task-manager-svelte
 
 # Install dependencies
 npm install
@@ -16,7 +16,42 @@ npm install
 npm run dev
 ```
 
-Visit [localhost:8080](http://localhost:8080) to see your app.
+Visit [localhost:8888](http://localhost:8888) to see your app.
+
+## 🧰 Tech Stack
+
+- [Svelte](https://svelte.dev) - Frontend framework
+- [Vite](https://vitejs.dev) - Next Generation Frontend Tooling
+- [TailwindCSS](https://tailwindcss.com) - Utility-first CSS framework
+- [Svelte Routing](https://github.com/EmilTholin/svelte-routing) - Client-side routing
+
+## ✨ Features
+
+- Create, complete, and delete tasks
+- Set priority levels (high, medium, low)
+- Task completion statistics
+- Persistent storage using localStorage
+- Responsive design with mobile menu
+- Client-side routing with multiple views
+- Animated transitions
+
+## 📦 Project Structure
+
+```
+├── public/          # Static assets
+├── src/
+│   ├── components/  # Reusable components
+│   │   ├── TaskForm.svelte
+│   │   ├── TaskList.svelte
+│   │   └── TaskStats.svelte
+│   ├── routes/      # Page components
+│   │   ├── Tasks.svelte
+│   │   ├── About.svelte
+│   │   └── Settings.svelte
+│   ├── stores/      # State management
+│   │   └── taskStore.js
+│   └── App.svelte   # Root component
+```
 
 ## 🛠️ Development
 
@@ -27,69 +62,26 @@ npm run dev
 # Build for production
 npm run build
 
-# Start production server
-npm run start
-```
-
-## 🧰 Tech Stack
-
-- [Svelte](https://svelte.dev) - Frontend framework
-- [Rollup](https://rollupjs.org) - Module bundler
-- [Sirv](https://github.com/lukeed/sirv) - Static file server
-
-## 📦 Project Structure
-
-```
-├── public/          # Static assets
-├── src/             # Source files
-│   ├── components/  # Svelte components
-│   └── App.svelte  # Root component
-└── scripts/        # Build/setup scripts
+# Preview production build
+npm run preview
 ```
 
 ## 🔧 Configuration
 
-### Development Mode
+The development server is configured to run on port 8888 and allows access from other devices on the network. You can modify these settings in `vite.config.js`.
 
-The development server will only respond to requests from localhost by default. To allow connections from other computers, edit the `sirv` commands in package.json:
+## 📱 Responsive Design
 
-```js
-"dev": "sirv public --host 0.0.0.0 --dev"
-```
+The application includes:
 
-### Single-page App Mode
+- Desktop navigation with underline indicators
+- Mobile-friendly hamburger menu
+- Responsive grid layout for statistics
+- Adaptive padding and spacing
 
-For SPAs with multiple routes, update the start command in package.json:
+## 🔒 Data Persistence
 
-```js
-"start": "sirv public --single"
-```
-
-## 🔍 TypeScript Support
-
-Initialize TypeScript support:
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-## 📤 Deployment
-
-### Vercel
-
-```bash
-npm install -g vercel
-cd public
-vercel deploy --name my-project
-```
-
-### Surge
-
-```bash
-npm install -g surge
-npm run build
-surge public my-project.surge.sh
-```
+Tasks are automatically saved to localStorage, ensuring your data persists between sessions. You can clear all data from the Settings page.
 
 ## 📝 License
 
